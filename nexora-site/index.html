@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nexora Solutions</title>
+    <meta name="description" content="Nexora Solutions: technology consulting and product engineering across software, AI/ML, IoT and IP development.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.documentElement.classList.add('js');
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('intro-on');
+    </script>
+</head>
+
+<body>
+
+    <!-- INTRO VIDEO (put your file at assets/intro.mp4) -->
+    <div class="intro" id="intro" aria-label="Nexora Solutions intro video">
+        <video id="introVideo" class="intro-video" src="assets/intro.mp4" muted playsinline preload="auto"></video>
+        <button class="intro-skip" id="skipIntro" type="button">Skip intro</button>
+    </div>
+
+    <header class="site-header" id="top">
+        <div class="wrap bar">
+            <a class="brand" href="#top" aria-label="Nexora Solutions home">
+                <img src="assets/emblem.png" alt="" width="52" height="33">
+                <span>Nexora Solutions</span>
+            </a>
+            <nav id="nav" class="nav" aria-label="Main">
+                <a href="#services">Services</a>
+                <a href="#work">Project concepts</a>
+                <a href="#process">Process</a>
+                <a href="#patent">Innovation</a>
+                <a href="#contact" class="btn btn-sm">Start a project</a>
+            </nav>
+            <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="wrap hero-grid">
+                <div class="hero-copy">
+                    <h1 class="warp-h1" data-warp='{"lens":"bulge","chromatic":0.35}'>Your vision.<br>Our technology.</h1>
+                    <p class="lead">Nexora Solutions is a technology consulting and product engineering company working across software, AI and machine learning, IoT, applied research and intellectual-property development.</p>
+                    <div class="cta-row">
+                        <a class="btn" href="#contact">Start a project</a>
+                        <a class="btn btn-ghost" href="#work">See project concepts</a>
+                    </div>
+
+                    <div class="stages" role="tablist" aria-label="How we work">
+                        <button role="tab" aria-selected="true" data-i="0" id="st0" type="button">Ideas</button>
+                        <button role="tab" aria-selected="false" data-i="1" id="st1" type="button">Technology</button>
+                        <button role="tab" aria-selected="false" data-i="2" id="st2" type="button">Impact</button>
+                    </div>
+                    <p class="stage-text" id="stageText" role="tabpanel" aria-live="polite"></p>
+                </div>
+
+                <div class="hero-art" id="heroArt">
+                    <div class="orbit o1"></div>
+                    <div class="orbit o2"></div>
+                    <div class="emblem-tilt" id="tilt">
+                        <img src="assets/emblem.png" alt="Nexora emblem">
+                    </div>
+                    <span class="tag t1">Innovate</span>
+                    <span class="tag t2">Develop</span>
+                    <span class="tag t3">Automate</span>
+                    <span class="tag t4">Grow</span>
+                </div>
+            </div>
+
+            <div class="wrap">
+                <dl class="facts">
+                    <div><dt>Founded</dt>
+                        <dd>May 2025</dd>
+                    </div>
+                    <div><dt>Company head</dt>
+                        <dd>Dr. L. Ganesh</dd>
+                    </div>
+                    <div><dt>Working across</dt>
+                        <dd>Tamil Nadu, Bengaluru, Andhra Pradesh</dd>
+                    </div>
+                    <div><dt>Patent granted</dt>
+                        <dd>20 May 2026, No. 589844</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="section">
+            <div class="wrap">
+                <div class="sec-head">
+                    <h2>What we build</h2>
+                    <p>End-to-end digital solutions, from the first question to the handover. Pick an area to see what is included.</p>
+                </div>
+                <div class="svc">
+                    <div class="svc-tabs" role="tablist" aria-label="Services" id="svcTabs"></div>
+                    <div class="svc-frame" id="svcFrame">
+                        <div class="svc-panel" id="svcPanel" role="tabpanel" aria-live="polite"></div>
+                    </div>
+                </div>
+
+                <h3 class="sub">Twelve capability areas behind the services</h3>
+                <ul class="caps" id="caps"></ul>
+            </div>
+        </section>
+
+        <!-- PROJECT CONCEPTS -->
+        <section id="work" class="section alt">
+            <div class="wrap">
+                <div class="sec-head">
+                    <h2>Project concepts</h2>
+                    <p>Twenty-seven concepts across agriculture, energy, health, logistics, SaaS and more. Filter by region or search by topic.</p>
+                </div>
+                <div class="filters">
+                    <div class="chips" id="regionChips" role="group" aria-label="Filter by region"></div>
+                    <label class="search"><span class="sr">Search project concepts</span>
+        <input id="projSearch" type="search" placeholder="Search, e.g. battery, voice, stock" autocomplete="off">
+      </label>
+                </div>
+                <div class="count-row">
+                    <p class="count" id="projCount" aria-live="polite"></p>
+                    <div class="chips view-toggle" id="viewToggle" role="group" aria-label="Project view">
+                        <button type="button" data-v="carousel" aria-pressed="true">Depth view</button>
+                        <button type="button" data-v="grid" aria-pressed="false">Grid view</button>
+                    </div>
+                </div>
+                <div class="depth" id="projDepth" hidden></div>
+                <div class="grid" id="projGrid"></div>
+
+                <h3 class="sub">Inside three concepts</h3>
+                <div class="profile-tabs" id="profTabs" role="tablist" aria-label="Technical profiles"></div>
+                <div class="profile" id="profile" role="tabpanel" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section id="process" class="section">
+            <div class="wrap">
+                <div class="sec-head">
+                    <h2>How a project runs</h2>
+                    <p>Twelve stages from discovery to continuous improvement. Select a stage to see the documents it produces.</p>
+                </div>
+                <div class="proc">
+                    <ol class="stage-list" id="stageList"></ol>
+                    <div class="stage-detail" id="stageDetail" aria-live="polite"></div>
+                </div>
+
+                <h3 class="sub">Industries we serve</h3>
+                <dl class="ind" id="industries"></dl>
+            </div>
+        </section>
+
+        <!-- PATENT -->
+        <section id="patent" class="section alt">
+            <div class="wrap">
+                <div class="sec-head">
+                    <h2>Innovation and patent work</h2>
+                    <p>From invention disclosure to a granted patent, with drawings, prior-art coordination and deadline tracking.</p>
+                </div>
+
+                <div class="patent">
+                    <div class="patent-main">
+                        <p class="kicker">Patent work reference</p>
+                        <h3>A System and Method for Optimizing the Selection of Large Language Models (LLMs)</h3>
+                        <dl class="pdl">
+                            <div><dt>Patent No.</dt>
+                                <dd>589844</dd>
+                            </div>
+                            <div><dt>Application No.</dt>
+                                <dd>202441073219</dd>
+                            </div>
+                            <div><dt>Filed</dt>
+                                <dd>27 September 2024</dd>
+                            </div>
+                            <div><dt>Granted</dt>
+                                <dd>20 May 2026</dd>
+                            </div>
+                            <div class="wide"><dt>Inventors / patentees</dt>
+                                <dd>Vamiskeshwaran Maheshwaran, Porselvi Soundararajan, Maheshwaran Govindarajeswaran, Punyabarota Dasgupta</dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <ol class="ladder" id="ladder"></ol>
+                </div>
+
+                <h3 class="sub">How an invention moves through our workflow</h3>
+                <div class="flowmenu">
+                    <div class="flowmenu-nav" id="ipFlow"></div>
+                    <div class="flowmenu-detail" id="ipDetail" aria-live="polite"></div>
+                </div>
+
+                <h3 class="sub">Illustrative invention-title catalogue</h3>
+                <div class="chips" id="catTabs" role="tablist" aria-label="Invention categories"></div>
+                <ol class="titles" id="catList"></ol>
+            </div>
+        </section>
+
+        <!-- QUALITY -->
+        <section class="section">
+            <div class="wrap two">
+                <div>
+                    <h2 class="h2s">How we prove it is done</h2>
+                    <p class="muted">Every conclusion links back to a record you can open.</p>
+                    <table class="tbl">
+                        <thead>
+                            <tr>
+                                <th scope="col">Dimension</th>
+                                <th scope="col">Evidence</th>
+                            </tr>
+                        </thead>
+                        <tbody id="quality"></tbody>
+                    </table>
+                </div>
+                <div>
+                    <h2 class="h2s">Why teams choose us</h2>
+                    <ul class="ticks" id="why"></ul>
+                    <h3 class="sub small">For student and project teams</h3>
+                    <ul class="plain" id="students"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section alt">
+            <div class="wrap two contact">
+                <div>
+                    <h2>Let's build your next big idea</h2>
+                    <p class="lead">Tell us what you want to make. We start with the problem, the users and how success will be measured.</p>
+                    <dl class="reach">
+                        <div><dt>Email</dt>
+                            <dd><span id="mail">nexorasolutionsadmin@gmail.com</span> <button class="copy" id="copyMail" type="button">Copy</button></dd>
+                        </div>
+                        <div><dt>Location</dt>
+                            <dd>Tamil Nadu, India</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <form class="form" id="enq" novalidate>
+                    <label for="fName">Your name</label>
+                    <input id="fName" name="name" type="text" autocomplete="name" required>
+                    <label for="fMail">Your email</label>
+                    <input id="fMail" name="email" type="email" autocomplete="email" required>
+                    <label for="fType">What do you need?</label>
+                    <select id="fType" name="type"></select>
+                    <label for="fMsg">Describe the idea</label>
+                    <textarea id="fMsg" name="msg" rows="5" required></textarea>
+                    <p class="err" id="fErr" role="alert"></p>
+                    <button class="btn" type="submit">Prepare enquiry</button>
+                    <div class="out" id="out" hidden>
+                        <p>Your enquiry is ready. Copy it and send it to the email address on this page.</p>
+                        <textarea id="outText" rows="7" readonly></textarea>
+                        <div class="cta-row">
+                            <button class="btn" id="copyEnq" type="button">Copy enquiry</button>
+                            <a class="btn btn-ghost" id="mailto" href="#">Open in mail app</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap foot">
+
+            <p>Turning ideas into real solutions. Edition 2026.</p>
+            <button class="linkbtn" id="replay" type="button">Replay intro</button>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="depth-carousel.js"></script>
+    <script src="electric-border.js"></script>
+    <script src="dock.js"></script>
+    <script src="split-text.js"></script>
+    <script src="branched-menu.js"></script>
+    <script src="script.js"></script>
+    <script src="assets/warp-text.js" defer></script>
+</body>
+
+</html>
